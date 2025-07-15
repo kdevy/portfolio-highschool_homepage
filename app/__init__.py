@@ -12,7 +12,7 @@ load_dotenv(env_file_path)
 
 def create_app(config=None):
     app = Flask(__name__)
-    app.secret_key = "53dcdb9c59fed95c6e061db661e4c0a93e8479c044e4c8da4783154090377cc3"
+    app.secret_key = "389e6d9681d0375b1de927d1e5f28871509ea42c11f1415053da686ad89b94f1"
     app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://{user}:{password}@{host}/{dbName}?charset=utf8".format(
             user = os.getenv('DB_USER'),
             password = os.getenv('DB_PASS'),
