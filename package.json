@@ -1,0 +1,27 @@
+{
+  "name": "flask",
+  "version": "1.0.0",
+  "description": "This is a skeleton project for Flask.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdevy/flask-skeleton.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdevy/flask-skeleton/issues"
+  },
+  "homepage": "https://github.com/kdevy/flask-skeleton#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
