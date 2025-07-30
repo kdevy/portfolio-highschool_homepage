@@ -20,7 +20,7 @@
       <!-- ロゴと高校名 -->
       <div class="flex items-center space-x-3">
         <img src="{{url_for('static', filename='img/logo.png')}}" alt="高校ロゴ" class="h-12 w-12" />
-        <a href="/" class="hover:underline">
+        <a href="{{url_for('user.index')}}" class="hover:underline">
           <div>
             <div class="text-lg font-bold">私立光坂高等学校</div>
             <div class="text-sm">Hikarizaka High School</div>
@@ -73,7 +73,8 @@
 
       <div>
         <ul class="space-y-2">
-          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学校概要</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="{{url_for('user.about')}}"
+              class="hover:underline">学校概要</a></li>
           <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">ニュース</a></li>
           <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">交通アクセス</a></li>
           <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学習について</a></li>
