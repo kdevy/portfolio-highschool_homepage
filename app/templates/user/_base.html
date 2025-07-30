@@ -2,18 +2,111 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}
-    {% endblock %}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwindcss/dest.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/tailwindcss/dest.css')}}">
+  <link rel="shortcut icon" href="{{url_for('static', filename='img/logo.png')}}" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/c8a365b521.js" crossorigin="anonymous"></script>
   {% block head %}
   {% endblock %}
 </head>
 
-<body>
-  {% block content %}
-  {% endblock %}
+<body class="bg-white text-gray-800">
+  <!-- Header -->
+  <header class="bg-blue-800 text-white">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
+
+      <!-- ロゴと高校名 -->
+      <div class="flex items-center space-x-3">
+        <img src="{{url_for('static', filename='img/logo.png')}}" alt="高校ロゴ" class="h-12 w-12" />
+        <a href="/" class="hover:underline">
+          <div>
+            <div class="text-lg font-bold">私立光坂高等学校</div>
+            <div class="text-sm">Hikarizaka High School</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- ユーティリティ -->
+      <div class="flex items-center space-x-3">
+        <a href="#access" class="hover:underline text-sm flex items-center">
+          <i class="fa-solid fa-location-dot mr-1"></i>
+          アクセス
+        </a>
+        <div class="flex items-center space-x-1 text-sm">
+          <button class="hover:underline">JP</button>
+          <span>|</span>
+          <button class="hover:underline">EN</button>
+        </div>
+        <div class="flex">
+          <input type="text" placeholder="検索..."
+            class="px-2 py-1 rounded-l bg-white text-black text-sm border border-r-0 border-white" />
+          <button class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-r border border-white border-l-0">
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
+          </button>
+        </div>
+
+        <button class="bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded">
+          <i class="fa-solid fa-bars text-white"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <div class="bg-blue-200 py-4 text-center">
+    <a href="#top" class="inline-flex items-center space-x-2 text-blue-600 hover:text-white transition">
+      <span class="text-lg">▲</span>
+      <span class="text-sm">ページの先頭に戻る</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-sm py-10 px-6">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-3 gap-6">
+
+      <div>
+        <ul class="space-y-2">
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学校概要</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">ニュース</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">交通アクセス</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学習について</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学校生活について</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="space-y-2">
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">進路について</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">入試について</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">問い合わせ・資料請求</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">サイトマップ</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">ウェブアクセシビリティ方針</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="space-y-2">
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">個人情報の取り扱い</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">いじめ防止対策基本方針</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-screen-xl mx-auto mt-8 border-t border-blue-700 pt-4 text-center text-xs">
+      <p>私立光坂高等学校<br>〒123-4567 東京都〇〇区〇〇町1-2-3 TEL: 03-1234-5678</p>
+      <p class="mt-2">&copy; 2025 私立光坂高等学校. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
   {% block script %}
   {% endblock %}
 </body>
