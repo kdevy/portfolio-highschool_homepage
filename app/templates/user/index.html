@@ -1,1 +1,182 @@
-index
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>私立光坂高等学校</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/tailwindcss/dest.css')}}">
+  <link rel="shortcut icon" href="{{url_for('static', filename='img/logo.png')}}" type="image/x-icon">
+  <link rel="stylesheet" href="{{url_for('static', filename='splide/splide.min.css')}}">
+  <script src="https://kit.fontawesome.com/c8a365b521.js" crossorigin="anonymous"></script>
+  <script src="{{url_for('static', filename='splide/splide.min.js')}}"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+  <header class="bg-blue-800 text-white">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
+
+      <!-- ロゴと高校名 -->
+      <div class="flex items-center space-x-3">
+        <img src="{{url_for('static', filename='img/logo.png')}}" alt="高校ロゴ" class="h-12 w-12" />
+        <a href="/" class="hover:underline">
+          <div>
+            <div class="text-lg font-bold">私立光坂高等学校</div>
+            <div class="text-sm">Hikarizaka High School</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- ユーティリティ -->
+      <div class="flex items-center space-x-3">
+        <a href="#access" class="hover:underline text-sm flex items-center">
+          <i class="fa-solid fa-location-dot mr-1"></i>
+          アクセス
+        </a>
+        <div class="flex items-center space-x-1 text-sm">
+          <button class="hover:underline">JP</button>
+          <span>|</span>
+          <button class="hover:underline">EN</button>
+        </div>
+        <div class="flex">
+          <input type="text" placeholder="検索..."
+            class="px-2 py-1 rounded-l bg-white text-black text-sm border border-r-0 border-white" />
+          <button class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-r border border-white border-l-0">
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
+          </button>
+        </div>
+
+        <button class="bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded">
+          <i class="fa-solid fa-bars text-white"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main>
+    <section class="splide max-w-7xl max-h-[450px] mx-auto mb-10" aria-label="introduction">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide relative">
+            <img src="{{ url_for('static', filename='img/carousel/1.png') }}" alt=""
+              class="w-full max-h-[450px] object-cover">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-center px-4">
+              <h2
+                class="text-white text-4xl md:text-6xl font-serif font-bold tracking-wide drop-shadow-lg animate-fadeIn">
+                共に学び、共に成長する
+              </h2>
+              <p class="text-white text-lg md:text-2xl font-mincho mt-4 opacity-90 animate-fadeIn delay-500">
+                A challenging spirit can change the world
+              </p>
+            </div>
+          </li>
+          <li class="splide__slide"><img src="{{url_for('static', filename='img/carousel/2.png')}}" alt=""
+              class="w-full max-h-[450px] object-cover"></li>
+          <li class="splide__slide"><img src="{{url_for('static', filename='img/carousel/3.png')}}" alt=""
+              class="w-full max-h-[450px] object-cover"></li>
+          <li class="splide__slide"><img src="{{url_for('static', filename='img/carousel/4.png')}}" alt=""
+              class="w-full max-h-[450px] object-cover"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ニュースサマリー -->
+    <section class="max-w-5xl mx-auto px-4 mb-10">
+      <h2 class="text-xl font-semibold mb-4 border-b pb-2">ニュース</h2>
+      <ul class="space-y-2">
+        <li class="flex items-center justify-between border-b border-gray-300 py-2">
+          <span class="text-gray-500 text-sm w-24">2025/07/16</span>
+          <a href="/news/detail" class="flex-1 hover:underline text-blue-800 truncate">
+            学校説明会のお知らせ
+          </a>
+          <span class="ml-2 px-2 py-0.5 text-xs font-semibold text-red-600 border border-red-600 rounded">
+            PDF
+          </span>
+        </li>
+        <li class="flex items-center justify-between border-b border-gray-300 py-2">
+          <span class="text-gray-500 text-sm w-24">2025/05/18</span>
+          <a href="/news/detail" class="flex-1 hover:underline text-blue-800 truncate">
+            体育祭の写真を公開しました
+          </a>
+        </li>
+        <li class="flex items-center justify-between border-b border-gray-300 py-2">
+          <span class="text-gray-500 text-sm w-24">2025/05/15</span>
+          <a href="/news/detail" class="flex-1 hover:underline text-blue-800 truncate">
+            中学生向け学校見学の受付開始
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 問い合わせ・動画紹介 -->
+    <section class="max-h-100px mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <a href="#contact" class="bg-blue-600 text-white p-6 rounded-lg shadow hover:bg-blue-700 text-center">
+        問い合わせ・資料請求はこちら
+      </a>
+      <a href="https://www.youtube.com/watch?v=XXXXXXXX" target="_blank"
+        class="bg-gray-100 text-black p-6 rounded-lg shadow hover:bg-gray-200 text-center">
+        学校施設紹介動画を見る
+      </a>
+    </section>
+  </main>
+
+  <div class="bg-blue-200 py-4 text-center">
+    <a href="#top" class="inline-flex items-center space-x-2 text-blue-600 hover:text-white transition">
+      <span class="text-lg">▲</span>
+      <span class="text-sm">ページの先頭に戻る</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-sm py-10 px-6">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-3 gap-6">
+
+      <div>
+        <ul class="space-y-2">
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学校概要</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">ニュース</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">交通アクセス</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学習について</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">学校生活について</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="space-y-2">
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">進路について</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">入試について</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">問い合わせ・資料請求</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">サイトマップ</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">ウェブアクセシビリティ方針</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="space-y-2">
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">個人情報の取り扱い</a></li>
+          <li><i class="fas fa-arrow-right mr-2"></i><a href="#" class="hover:underline">いじめ防止対策基本方針</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-screen-xl mx-auto mt-8 border-t border-blue-700 pt-4 text-center text-xs">
+      <p>私立光坂高等学校<br>〒123-4567 東京都〇〇区〇〇町1-2-3 TEL: 03-1234-5678</p>
+      <p class="mt-2">&copy; 2025 私立光坂高等学校. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    new Splide(".splide", {
+      type: "loop",
+      autoplay: true,
+      interval: 6000,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      arrows: false,
+    }).mount();
+  </script>
+</body>
+
+</html>
